@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+:root{
+  --shadow-color: hsla(318, 60%, 50%, 0.671);
+}
+
+body, html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.input-range__label--max,
+.input-range__label--min {
+  display: none;
+}
+
+.leaflet-container {
+  background: #262626 !important;
+}
+
+.leaflet-top {
+  top: unset !important;
+  bottom: 45px;
+}
+
+.input-range__track.input-range__track--background {
+  background-color: black;
+}
+
+.input-range__track.input-range__track--active {
+  background-color: #dedede;
+}
+
+.input-range__slider {
+  background-color: #dedede !important;
+}
+
+.input-range__label-container {
+  background-color: #00000066;
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+
+.controlContainer {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #53024faa;
+  border-bottom: 1px solid #55064a99;
+  height: 50px;
+  z-index: 999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+.header div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  color: white;
+}
+
+.vertSlider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  width: 60vw;
+  z-index: 1001;
+  margin: 0 auto;
+  background-color: #53024faa;
+  padding: 30px 20px 10px;
+  border-radius: 7px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.vertSlider .brand{
+  font-family: 'Satisfy', cursive;
+  font-size: 1.01rem;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transform: translateY(-25%);
+}
+.vertSlider .brand img{
+  margin-right: 10px;
+}
+.vertSliderMeta {
+  margin: -20px 20px 0px 0px;
+  width: 120px;
+}
+.vertSliderMeta p {
+  color: #999;
+  font-size: .8em;
+  margin: 0px 0px 1px 0px;
+}
+.vertSliderControl {
+  width: 75%;
+}
+
+img.passType {
+  height: 30px;
+  margin: 10px 10px;
+  filter: brightness(.35);
+}
+
+img.passType.active {
+  filter: none;
+}
+
+img.passType:hover {
+  cursor: pointer;
+}
+
+.sakuraNameSearch {
+  background: #333;
+  border: 0;
+  font-size: 1.2em;
+  text-align: center;
+  height: 2em;
+  border-radius: 20px;
+  margin-top: 6px;
+  padding: 0px 20px;
+  color: white;
+}
+
+.sakuraCount {
+  font-size: .85em;
+  text-align: center;
+  display: block;
+  background-color: #00000066;
+  border-bottom-right-radius: 10px;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  margin-top: 9px;
+}
+
+.sakuraCount button {
+  margin-left: 10px;
+}
+
+.sakuraCard {
+  width: 300px;
+}
+
+.sakuraCard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sakuraCard table thead th {
+  border-bottom: 1px solid #ccc;
+}
+
+.ctr {
+  text-align: center;
+}
+
+.black-diamond {
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 0.8em !important;
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  margin: 10px -5px;
+  min-height: 150px;
+}
+.flex-container .column-left {
+  padding: 7px;
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid #dedede;
+  background-color: #0000007c;
+  border-radius: 5px;
+  margin: 0 5px;
+  position: relative;
+}
+.flex-container .column-right {
+  padding: 7px;
+  flex: 1;
+  overflow: hidden;
+  /* border: 1px solid #dedede; */
+  margin: 0 5px;
+  position: relative;
+}
+.sakura-popup .leaflet-popup-content-wrapper {
+  position: relative;
+  border-radius: 16px;
+  background-color: rgba(82, 55, 69, 0.932);
+  color: white;
+  overflow: hidden;
+}
+.sakura-popup .leaflet-popup-tip-container .leaflet-popup-tip {
+  background-color: rgba(82, 55, 69, 0.932);
+}
+.sakura-popup-image{
+  position: absolute;
+  background-size: cover;
+  margin-left: -20px;
+  margin-top: -14px;
+  height: 100%;
+  width: 40%;
+  object-fit: cover;
+}
+.popover-location-section{
+  margin-left: 155px;
+  z-index: 2;
+  position: relative;
+}
+.location-icon{
+  position: absolute;
+  top: 30px;
+  left: 146px;
+}
+.popover-location-section .location-link{
+  color: rgb(243, 154, 224);
+}
+.popover-icon {
+  position: absolute;
+  opacity: .15;
+}
+.popover-icon.cherry {
+  width: 60%;
+  right: -100px;
+  bottom: 20px;
+  z-index: 1;
+}
+.popover-suffix {
+  opacity: .7;
+  text-transform: uppercase;
+  font-size: .85em;
+  display: block;
+}
+.popover-suffix-up {
+  margin-top: -5px;
+}
+.popover-stat {
+  display: block;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.popover-mainstat{
+  line-height: 19px;
+  margin-bottom: 10px;
+}
+.popover-substat {
+  font-size: 1.1em;
+}
+.leaflet-popup-close-button{
+  z-index: 2;
+  margin-right: 3px;
+  margin-top: 3px;
+}
+.vertical-top-bottom {
+  position: absolute;
+  bottom: 10px;
+}
+.stat-pct {
+  font-size: .9em;
+  opacity: .9;
+  display: block;
+}
+
+textarea, select, input, button { outline: none; }
+
+.mobile-only { display: none; }
+
+@media only screen and (max-width: 800px) {
+  .mobile-only { display: inline-block; }
+  img.passType { display: none; }
+  select, button { color: white; }
+  .author {
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    z-index: 1001;
+  }
+}
+
+.sakura {
+  background-image: url('../assets/images/cherryblossom.png');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+
+  /* filter: drop-shadow(
+      1px 2px 8px var(--shadow-color)
+    ); */
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+.marker-cluster-custom {
+  background-image: url('../assets/images/cherryblossom.png');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  /* background: #a3308a; */
+  /* border: 3px solid #ededed; */
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 40px;
+
+  /* filter: drop-shadow(
+      1px 2px 8px var(--shadow-color)
+    ); */
+    filter: drop-shadow(13px 13px 12px var(--shadow-color));
+}
