@@ -20,7 +20,7 @@ const VerticalSlider = () => {
     >
       <MediaQuery minWidth={451}>
       <div className="brand">
-        <img src={SakuraIcon} alt="Sakura Logo" height={"40px"} />
+        <img src={SakuraIcon} alt="Sakura Logo" height={"40px"} width={"40px"} />
         Sakura Vancouver
       </div>
         </MediaQuery>

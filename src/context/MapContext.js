@@ -8,7 +8,8 @@ const MapContext = createContext();
 const MapContextProvider = ({ children }) => {
   // const [searchTerm, setSearchTerm] = useState("");
   const [sakuraCtx, setSakuraCtx] = useState([]);
-  const [filteredSakura, setFilteredSakura] = useState([]);
+  const [filteredSakura, setFilteredSakura] = useState([]);  
+  
   const [dateFilter, setDateFilter] = useState({ min: dateConfig.now, max: dateConfig.max });
 
   useEffect(() => {
