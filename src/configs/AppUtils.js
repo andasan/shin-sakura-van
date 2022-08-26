@@ -5,7 +5,7 @@ const CURRENT_YEAR = '2022'
 
 export const GET_SAKURA = gql`
   query getSakura {
-    data {
+    sakuradata {
       id
       geolocation
       blooming

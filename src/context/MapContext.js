@@ -27,7 +27,7 @@ const MapContextProvider = ({ children }) => {
   const { loading, error, data: sakuras } = useQuery(GET_SAKURA);
 
   const fetchSakuras = useCallback(() => {
-    const newArr = sakuras?.data.map((sakura) => {
+    const newArr = sakuras?.sakuradata.map((sakura) => {
       const bloomDates = {
         start: `${dateConfig.currentYear}/${sakura.blooming.split("-")[0]}`,
         end: `${dateConfig.currentYear}/${sakura.blooming.split("-")[1]}`

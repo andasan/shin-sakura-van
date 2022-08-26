@@ -13,7 +13,7 @@ export const defaultMapState = {
 }
 
 export const geoLocationParse = (loc) => {
-  const { lat, long } = JSON.parse(loc);
+  const { lat, long } = JSON.parse(JSON.parse(loc));
   return [Number.parseFloat(lat), Number.parseFloat(long)];
 };
 
