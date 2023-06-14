@@ -75,10 +75,10 @@ export default function SakuraMap(props) {
               }}
             />
           ))}
-          {/* <LocationMarker /> */}
-          <LocateControl options={locateOptions} />
         </MarkerClusterGroup>
 
+        {/* <LocationMarker /> */}
+        <LocateControl options={locateOptions} />
 
         {mapState.activeSakura && (
           <Popup
