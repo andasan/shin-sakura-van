@@ -1,7 +1,7 @@
 import L from "leaflet";
 
-import SakuraIcon from "assets/images/cherry.svg";
-import LocationIcon from "assets/images/location.png";
+import SakuraIcon from "@/assets/images/cherry.svg";
+import LocationIcon from "@/assets/images/location.png";
 
 export const sakuraMarker = L.icon({
   iconUrl: SakuraIcon,

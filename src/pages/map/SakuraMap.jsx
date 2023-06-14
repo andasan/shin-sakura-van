@@ -4,11 +4,11 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 
 import "leaflet/dist/leaflet.css";
 import "react-leaflet-markercluster/dist/styles.min.css";
-import { sakuraMarker, createClusterCustomIcon } from "components/modules/map/SakuraMapIcons";
+import { sakuraMarker, createClusterCustomIcon } from "@/components/modules/map/SakuraMapIcons";
 
-import Preloader from "components/modules/preloader/Preloader";
-import SakuraMapTooltip from "components/modules/map/SakuraMapTooltip";
-import LocateControl from "components/modules/map/Locate";
+import Preloader from "@/components/modules/preloader/Preloader";
+import SakuraMapTooltip from "@/components/modules/map/SakuraMapTooltip";
+import LocateControl from "@/components/modules/map/Locate";
 
 import {
   attribution,
@@ -16,8 +16,8 @@ import {
   defaultMapState,
   geoLocationParse,
   locateOptions
-} from "configs/SakuraMapConfig";
-import { MapContext } from "context/MapContext";
+} from "@/configs/SakuraMapConfig";
+import { MapContext } from "@/context/MapContext";
 
 /**
  *
@@ -75,10 +75,10 @@ export default function SakuraMap(props) {
               }}
             />
           ))}
+          {/* <LocationMarker /> */}
+          <LocateControl options={locateOptions} />
         </MarkerClusterGroup>
 
-        {/* <LocationMarker /> */}
-        <LocateControl options={locateOptions} />
 
         {mapState.activeSakura && (
           <Popup

@@ -1,15 +1,15 @@
 import React, { createContext, useState, useEffect, useCallback } from "react";
 import { useQuery } from "@apollo/client";
 
-import { dateConfig, isInRange, GET_SAKURA } from "configs/AppUtils";
+import { dateConfig, isInRange, GET_SAKURA } from "@/configs/AppUtils";
 
 const MapContext = createContext();
 
 const MapContextProvider = ({ children }) => {
   // const [searchTerm, setSearchTerm] = useState("");
   const [sakuraCtx, setSakuraCtx] = useState([]);
-  const [filteredSakura, setFilteredSakura] = useState([]);  
-  
+  const [filteredSakura, setFilteredSakura] = useState([]);
+
   const [dateFilter, setDateFilter] = useState({ min: dateConfig.now, max: dateConfig.max });
 
   useEffect(() => {
@@ -25,6 +25,8 @@ const MapContextProvider = ({ children }) => {
   }, [dateFilter, sakuraCtx]);
 
   const { loading, error, data: sakuras } = useQuery(GET_SAKURA);
+
+  console.log("sakuras", sakuras);
 
   const fetchSakuras = useCallback(() => {
     const newArr = sakuras?.sakuradata.map((sakura) => {

@@ -4,9 +4,9 @@ import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import Skeleton from "@mui/material/Skeleton";
 import dayjs from "dayjs";
 
-import Cherry from "assets/images/cherry.svg";
-import Placeholder from "assets/images/noimage.jpg";
-import { geoLocationParse } from "configs/SakuraMapConfig";
+import Cherry from "@/assets/images/cherry.svg";
+import Placeholder from "@/assets/images/noimage.jpg";
+import { geoLocationParse } from "@/configs/SakuraMapConfig";
 
 export default class SakuraMapTooltip extends Component {
   addDefaultSrc = (ev) => {

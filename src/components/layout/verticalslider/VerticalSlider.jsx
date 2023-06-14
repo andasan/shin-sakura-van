@@ -5,9 +5,9 @@ import debounce from "lodash/debounce";
 import { motion } from "framer-motion";
 import MediaQuery from "react-responsive";
 
-import { MapContext } from "context/MapContext";
-import { dateConfig } from "configs/AppUtils";
-import SakuraIcon from "assets/images/cherry.svg";
+import { MapContext } from "@/context/MapContext";
+import { dateConfig } from "@/configs/AppUtils";
+import SakuraIcon from "@/assets/images/cherry.svg";
 
 const VerticalSlider = () => {
   const { dateFilter, setDateFilter } = useContext(MapContext);
@@ -24,7 +24,7 @@ const VerticalSlider = () => {
         Sakura Vancouver
       </div>
         </MediaQuery>
-      
+
       <div className="vertSliderControl">
         <InputRange
           formatLabel={(value) => dayjs(value).format("MMM D")}

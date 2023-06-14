@@ -9,9 +9,9 @@ import {
 const createApolloClient = (authToken) => {
   return new ApolloClient({
     link: new HttpLink({
-      uri: process.env.REACT_APP_HASURA_GRAPHQL_URL,
+      uri: import.meta.env.VITE_HASURA_GRAPHQL_URL,
       headers: {
-        'x-hasura-admin-secret': process.env.REACT_APP_HASURA_GRAPHQL_ADMIN_SECRET
+        'x-hasura-admin-secret': import.meta.env.VITE_HASURA_GRAPHQL_ADMIN_SECRET
       }
     }),
     cache: new InMemoryCache()

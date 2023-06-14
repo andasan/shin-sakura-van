@@ -2,7 +2,7 @@ import React from "react";
 // import { DebounceInput } from "react-debounce-input";
 import { motion } from "framer-motion";
 
-import SakuraIcon from "assets/images/cherry.svg";
+import SakuraIcon from "@/assets/images/cherry.svg";
 
 const Header = () => {
   return (
