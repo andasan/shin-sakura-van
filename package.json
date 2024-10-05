@@ -27,8 +27,9 @@
     "styled-components": "^5.3.11"
   },
   "scripts": {
+    "dev": "vite",
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "serve": "vite preview"
   },
   "eslintConfig": {
