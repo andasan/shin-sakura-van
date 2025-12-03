@@ -5,16 +5,20 @@ const CURRENT_YEAR = '2024'
 
 export const GET_SAKURA = gql`
   query getSakura {
-    sakuradata {
-      id
-      geolocation
-      blooming
-      cultivar
-      description
-      images
-      location
-      nieghborhood
-      sources
+    sakuradataCollection {
+      edges {
+        node {
+          id
+          geolocation
+          blooming
+          cultivar
+          description
+          images
+          location
+          nieghborhood
+          sources
+        }
+      }
     }
   }
 `;

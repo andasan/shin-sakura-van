@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useCallback } from "react";
+import React, { createContext, useState, useEffect, useCallback, useMemo } from "react";
 import { useQuery } from "@apollo/client";
 
 import { dateConfig, isInRange, GET_SAKURA } from "@/configs/AppUtils";
@@ -24,20 +24,32 @@ const MapContextProvider = ({ children }) => {
     setFilteredSakura(tempArr)
   }, [dateFilter, sakuraCtx]);
 
-  const { loading, error, data: sakuras } = useQuery(GET_SAKURA);
+  const { loading, error, data } = useQuery(GET_SAKURA);
 
-  console.log("sakuras", sakuras);
+  const sakuraNodes = useMemo(() => {
+    return (
+      data?.sakuradataCollection?.edges
+        ?.map((edge) => edge?.node)
+        .filter(Boolean) ?? []
+    );
+  }, [data]);
 
   const fetchSakuras = useCallback(() => {
-    const newArr = sakuras?.sakuradata.map((sakura) => {
+    if (!sakuraNodes.length) {
+      setSakuraCtx([]);
+      return;
+    }
+
+    const newArr = sakuraNodes.map((sakura) => {
+      const [start = "", end = ""] = sakura?.blooming?.split("-") ?? [];
       const bloomDates = {
-        start: `${dateConfig.currentYear}/${sakura.blooming.split("-")[0]}`,
-        end: `${dateConfig.currentYear}/${sakura.blooming.split("-")[1]}`
+        start: `${dateConfig.currentYear}/${start}`,
+        end: `${dateConfig.currentYear}/${end}`
       };
       return { ...sakura, blooming: bloomDates };
     });
     setSakuraCtx(newArr);
-  }, [sakuras]);
+  }, [sakuraNodes]);
 
   const value = {
     loading,

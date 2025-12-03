@@ -9,14 +9,27 @@ import {
 const createApolloClient = (authToken) => {
   return new ApolloClient({
     link: new HttpLink({
-      uri: import.meta.env.VITE_HASURA_GRAPHQL_URL,
+      uri: import.meta.env.VITE_GRAPHQL_ENDPOINT,
       headers: {
-        'x-hasura-admin-secret': import.meta.env.VITE_HASURA_GRAPHQL_ADMIN_SECRET
+        'apiKey': `${import.meta.env.VITE_GRAPHQL_TOKEN}`
       }
     }),
     cache: new InMemoryCache()
   });
 };
+
+// Legacy
+// const createApolloClient = (authToken) => {
+//   return new ApolloClient({
+//     link: new HttpLink({
+//       uri: import.meta.env.VITE_HASURA_GRAPHQL_URL,
+//       headers: {
+//         'x-hasura-admin-secret': import.meta.env.VITE_HASURA_GRAPHQL_ADMIN_SECRET
+//       }
+//     }),
+//     cache: new InMemoryCache()
+//   });
+// };
 
 const SakuraProvider = ({ children }) => {
   const [client] = useState(createApolloClient());
